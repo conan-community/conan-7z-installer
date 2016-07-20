@@ -9,6 +9,7 @@ class SevenZinstallerConan(ConanFile):
     url = "http://github.com/lasote/conan-7z-installer"
     settings = {"os": ["Windows"], "arch": ["x86_64"]}
     exports = "sources/*"
+    build_policy = "missing"
 
     def package(self):
         self.copy("*", dst="bin", src="sources")
