@@ -1,4 +1,4 @@
-from conans import ConanFile, CMake, tools
+from conans import ConanFile
 import os
 
 
@@ -7,7 +7,7 @@ class SevenZinstallerConan(ConanFile):
     version = "0.1"
     license = "GNU LGPL + unRAR restriction"
     url = "http://github.com/lasote/conan-7z-installer"
-    settings = {"os": ["Windows"], "arch": ["x86_64"]}
+    settings = {"os": ["Windows"]}
     exports = "sources/*"
     build_policy = "missing"
 
