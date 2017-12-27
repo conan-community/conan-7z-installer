@@ -1,4 +1,6 @@
 from conans import ConanFile
+from conans import __version__ as conan_version
+from conans.model.version import Version
 import os
 
 
@@ -7,7 +9,10 @@ class SevenZinstallerConan(ConanFile):
     version = "0.1"
     license = "GNU LGPL + unRAR restriction"
     url = "http://github.com/lasote/conan-7z-installer"
-    settings = {"os": ["Windows"]}
+    if conan_version < Version("0.99"):
+        settings = {"os": ["Windows"]}
+    else:
+        settings = {"os_build": ["Windows"]}
     exports = "sources/*"
     build_policy = "missing"
 
