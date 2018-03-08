@@ -3,7 +3,7 @@
 ![7z_installer image](/images/conan-7z_installer.png)
 
 [![Download](https://api.bintray.com/packages/conan-community/conan/7z_installer%3Aconan/images/download.svg)](https://bintray.com/conan-community/conan/7z_installer%3Aconan/_latestVersion)
-[![Build status](https://ci.appveyor.com/api/projects/status/jyeh443gn0l0f3bi/branch/master/1.0?svg=true)](https://ci.appveyor.com/project/lasote/conan-7z-installer/branch/master/1.0)
+[![Build status](https://ci.appveyor.com/api/projects/status/jyeh443gn0l0f3bi/branch/master?svg=true)](https://ci.appveyor.com/project/lasote/conan-7z-installer/branch/master)
 
 [Conan.io](https://conan.io) build require package for [7-Zip](http://www.7-zip.org/) project
 
