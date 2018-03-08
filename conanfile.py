@@ -8,13 +8,13 @@ class SevenZinstallerConan(ConanFile):
     name = "7z_installer"
     version = "1.0"
     license = "GNU LGPL + unRAR restriction"
-    url = "http://github.com/lasote/conan-7z-installer"
+    homepage = "http://www.7-zip.org/"
+    url = "http://github.com/conan-community/conan-7z-installer"
     if conan_version < Version("0.99"):
         settings = {"os": ["Windows"]}
     else:
         settings = {"os_build": ["Windows"]}
     exports_sources = "sources/*"
-
     build_policy = "missing"
     description = "7-Zip is open source software. Most of the source code is under the GNU LGPL " \
                   "license. The unRAR code is under a mixed license: GNU LGPL + unRAR restrictions."
