@@ -1,6 +1,4 @@
-from conans import ConanFile
-from conans import __version__ as conan_version
-from conans.model.version import Version
+from conans import ConanFile, tools
 import os
 
 
@@ -10,10 +8,7 @@ class SevenZinstallerConan(ConanFile):
     license = "GNU LGPL + unRAR restriction"
     homepage = "http://www.7-zip.org/"
     url = "http://github.com/conan-community/conan-7z-installer"
-    if conan_version < Version("0.99"):
-        settings = {"os": ["Windows"]}
-    else:
-        settings = {"os_build": ["Windows"]}
+    settings = {"os_build": ["Windows"]}
     exports_sources = "sources/*"
     build_policy = "missing"
     description = "7-Zip is open source software. Most of the source code is under the GNU LGPL " \
@@ -21,6 +16,10 @@ class SevenZinstallerConan(ConanFile):
 
     def package(self):
         self.copy("*", dst="bin", src="sources")
+        self.copy("*", dst="bin_32", src="sources_32")
 
     def package_info(self):
-        self.env_info.path.append(os.path.join(self.package_folder, "bin"))
+        if tools.detected_architecture == "x86":
+            self.env_info.path.append(os.path.join(self.package_folder, "bin_32"))
+        else:
+            self.env_info.path.append(os.path.join(self.package_folder, "bin"))
